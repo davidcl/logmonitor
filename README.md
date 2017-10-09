@@ -5,8 +5,8 @@ A simple console program that parse and monitor HTTP traffic from logs.
 ## Quick start
 
 ```
-mkdir src/github.com/davidcl/logmonitor`
-tar -xzf -C src/github.com/davidcl/logmonitor logmonitor.tar.gz
+mkdir -p src/github.com/davidcl/logmonitor
+tar -C src/github.com/davidcl/logmonitor -xzf logmonitor.tar.gz
 export GOPATH=$(pwd):$GOPATH
 go get github.com/davidcl/logmonitor
 go build github.com/davidcl/logmonitor
