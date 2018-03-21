@@ -5,9 +5,6 @@ A simple console program that parse and monitor HTTP traffic from logs.
 ## Quick start
 
 ```
-mkdir -p src/github.com/davidcl/logmonitor
-tar -C src/github.com/davidcl/logmonitor -xzf logmonitor.tar.gz
-export GOPATH=$(pwd):$GOPATH
 go get github.com/davidcl/logmonitor
 go build github.com/davidcl/logmonitor
 ./logmonitor --help
@@ -35,8 +32,8 @@ The `SortedInsert()` method put its values sorted into an array of pointers. Usi
 
 `Counters` type (overruns.go:16) should be extended to compute content-length on average. This information is useful to evaluate the required bandwidth for the server.
 
-Traffic counters (statistics.go:29) are stored into a doubly linked list to meet stated requirements (having a fixed time duration to compute overruns). If the requirements could be updated to "for the past 2 minutes or 100 log entries" then the counters could be implemented as a ring buffer (backed by an array) thus relaxing the allocation / deallocation / GC pressure on (probable) high server load.
+Traffic counters (statistics.go:29) are stored into a doubly linked list to have a fixed time duration to compute overruns. 
 
 ## Note
 
-This is my first Golang program, I really enjoyed the challenge of learning this new language in the limited timeframe ; do not hesitate to point the Golang non-sense out !
+This is my first Golang program; do not hesitate to point the Golang non-sense out !
